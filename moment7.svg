@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="terraceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="50%" stop-color="#311042" />
+      <stop offset="100%" stop-color="#581c87" />
+    </linearGradient>
+    <radialGradient id="lanternGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#311042" stop-opacity="0" />
+    </radialGradient>
+    <filter id="softGlow7" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="600" height="500" rx="16" fill="url(#terraceBg)"/>
+  <!-- Fairy Light Strings -->
+  <path d="M-20 60 Q150 140 300 80 T620 90" fill="none" stroke="#fde047" stroke-width="2" opacity="0.6"/>
+  <path d="M-20 130 Q180 200 360 150 T620 170" fill="none" stroke="#fde047" stroke-width="1.8" opacity="0.5"/>
+  <!-- Fairy Bulbs -->
+  <g filter="url(#softGlow7)">
+    <circle cx="80" cy="100" r="10" fill="#fde047"/>
+    <circle cx="180" cy="125" r="12" fill="#fbbf24"/>
+    <circle cx="280" cy="85" r="11" fill="#fef08a"/>
+    <circle cx="380" cy="82" r="13" fill="#fde047"/>
+    <circle cx="490" cy="98" r="11" fill="#fbbf24"/>
+    
+    <circle cx="100" cy="165" r="11" fill="#fde047"/>
+    <circle cx="220" cy="188" r="14" fill="#fef08a"/>
+    <circle cx="340" cy="155" r="12" fill="#fbbf24"/>
+    <circle cx="460" cy="162" r="13" fill="#fde047"/>
+  </g>
+  <!-- Floating Hearts around lights -->
+  <g transform="translate(300, 270) scale(1.1)" filter="url(#softGlow7)">
+    <path d="M0 -30 C-20 -60 -60 -40 -60 -10 C-60 25 0 60 0 70 C0 60 60 25 60 -10 C60 -40 20 -60 0 -30 Z" fill="#f43f5e" opacity="0.85"/>
+  </g>
+  <!-- Terrace Balcony Silhouette -->
+  <rect x="0" y="420" width="600" height="80" fill="#0f0c29" opacity="0.9"/>
+  <path d="M40 380 L560 380" stroke="#0f0c29" stroke-width="8" stroke-linecap="round"/>
+  <!-- Balcony railing bars -->
+  <line x1="80" y1="380" x2="80" y2="420" stroke="#0f0c29" stroke-width="4"/>
+  <line x1="140" y1="380" x2="140" y2="420" stroke="#0f0c29" stroke-width="4"/>
+  <line x1="200" y1="380" x2="200" y2="420" stroke="#0f0c29" stroke-width="4"/>
+  <line x1="260" y1="380" x2="260" y2="420" stroke="#0f0c29" stroke-width="4"/>
+  <line x1="320" y1="380" x2="320" y2="420" stroke="#0f0c29" stroke-width="4"/>
+  <line x1="380" y1="380" x2="380" y2="420" stroke="#0f0c29" stroke-width="4"/>
+  <line x1="440" y1="380" x2="440" y2="420" stroke="#0f0c29" stroke-width="4"/>
+  <line x1="500" y1="380" x2="500" y2="420" stroke="#0f0c29" stroke-width="4"/>
+  <text x="300" y="475" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="16" fill="#fef08a" text-anchor="middle" letter-spacing="3" opacity="0.95">MAGICAL EVENINGS</text>
+</svg>

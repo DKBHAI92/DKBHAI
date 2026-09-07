@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fd746c" />
+      <stop offset="45%" stop-color="#ff9068" />
+      <stop offset="70%" stop-color="#ffb199" />
+      <stop offset="100%" stop-color="#f857a6" />
+    </linearGradient>
+    <radialGradient id="sunGlow4" cx="50%" cy="55%" r="40%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#ffecb3" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#fd746c" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow4" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="600" height="500" rx="16" fill="url(#bgGrad4)"/>
+  <!-- Sunset Sun Glow -->
+  <circle cx="300" cy="260" r="130" fill="url(#sunGlow4)"/>
+  <!-- Glowing Sun disc -->
+  <circle cx="300" cy="260" r="48" fill="#ffffff" opacity="0.9" filter="url(#glow4)"/>
+  <!-- Floating Sky Lanterns -->
+  <g transform="translate(180, 140) scale(0.8)">
+    <polygon points="-12,18 12,18 16,-18 -16,-18" fill="#ffe082" opacity="0.9" filter="url(#glow4)"/>
+    <ellipse cx="0" cy="0" rx="6" ry="10" fill="#fff" opacity="0.95"/>
+  </g>
+  <g transform="translate(390, 110) scale(0.65)">
+    <polygon points="-12,18 12,18 16,-18 -16,-18" fill="#ffe082" opacity="0.9" filter="url(#glow4)"/>
+    <ellipse cx="0" cy="0" rx="6" ry="10" fill="#fff" opacity="0.95"/>
+  </g>
+  <g transform="translate(460, 170) scale(0.5)">
+    <polygon points="-12,18 12,18 16,-18 -16,-18" fill="#ffe082" opacity="0.9" filter="url(#glow4)"/>
+    <ellipse cx="0" cy="0" rx="6" ry="10" fill="#fff" opacity="0.95"/>
+  </g>
+  <g transform="translate(120, 190) scale(0.55)">
+    <polygon points="-12,18 12,18 16,-18 -16,-18" fill="#ffe082" opacity="0.9" filter="url(#glow4)"/>
+    <ellipse cx="0" cy="0" rx="6" ry="10" fill="#fff" opacity="0.95"/>
+  </g>
+  <!-- Water Reflection Line -->
+  <rect x="0" y="320" width="600" height="180" fill="#a43353" opacity="0.45"/>
+  <ellipse cx="300" cy="330" rx="100" ry="6" fill="#ffffff" opacity="0.4"/>
+  <ellipse cx="300" cy="345" rx="70" ry="4" fill="#ffffff" opacity="0.3"/>
+  <ellipse cx="300" cy="360" rx="45" ry="3" fill="#ffffff" opacity="0.2"/>
+  <!-- Two Swans forming a heart silhouette on the water -->
+  <g transform="translate(300, 316) scale(0.7)">
+    <path d="M -25,0 C -35,-25 -10,-40 0,-15 C 10,-40 35,-25 25,0 C 15,10 -15,10 -25,0 Z" fill="#ffffff" opacity="0.85" filter="url(#glow4)"/>
+  </g>
+  <text x="300" y="475" font-family="'Segoe UI', sans-serif" font-weight="600" font-size="16" fill="#fff" text-anchor="middle" letter-spacing="3" opacity="0.95">TIMELESS &amp; SWEET</text>
+</svg>
