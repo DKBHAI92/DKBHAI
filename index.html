@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>For Shrishtu ❤️ | A Little Magical Corner</title>
+  <meta name="description"
+    content="A magical, cute and deeply romantic digital love letter made especially for Shrishti Yadav.">
+  <meta name="theme-color" content="#ff8da1">
+
+  <!-- Favicon Heart -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+
+  <!-- Google Fonts: Romantic Cursive & Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Ambient Rose Petals & Sparkles Canvas Background -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- Interactive Desktop Cursor Trail Canvas -->
+  <canvas id="cursor-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========================================================
+       1. BEAUTIFUL LOVE SPLASH SCREEN
+  ======================================================== -->
+  <div id="splash-screen" class="splash-screen" role="dialog" aria-modal="true" aria-label="Welcome Splash Screen">
+    <div class="splash-aurora"></div>
+    <div class="splash-hearts-container" id="splash-hearts" aria-hidden="true"></div>
+
+    <div class="splash-card">
+      <div class="splash-heart-wrapper">
+        <div class="beating-heart splash-center-heart" id="splash-heart-icon" title="Double-click for surprise!">
+          <svg viewBox="0 0 100 90" fill="currentColor">
+            <path
+              d="M50 88.6C47.8 88.6 10 65 2.2 46.2C-5.6 27.4 3.8 6.4 22.8 1.4C34.4 -1.6 45.4 4.8 50 13.8C54.6 4.8 65.6 -1.6 77.2 1.4C96.2 6.4 105.6 27.4 97.8 46.2C90 65 52.2 88.6 50 88.6Z" />
+          </svg>
+          <div class="heart-pulse-ring"></div>
+        </div>
+      </div>
+
+      <p class="splash-subtitle">For Someone Very Special ❤️</p>
+      <h1 class="splash-title handwritten">Shrishti Yadav</h1>
+
+      <p class="splash-teaser">A little piece of my heart, wrapped in a magical surprise...</p>
+
+      <button id="btn-open-heart" class="btn-romantic btn-splash" type="button">
+        <span class="btn-text">Open My Heart ❤️</span>
+        <span class="btn-glow"></span>
+      </button>
+
+      <p class="splash-footer-note">Made with ❤️ just for Shrishtu</p>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       NAVIGATION BAR
+  ======================================================== -->
+  <header id="main-header" class="site-header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="#hero" class="nav-logo" id="logo-easter-egg" title="Click for a secret note!">
+        <span class="logo-letter">S</span>
+        <span class="logo-heart">❤️</span>
+        <span class="logo-letter">D</span>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#love-letter" class="nav-link">Letter</a></li>
+        <li><a href="#why-special" class="nav-link">Why You</a></li>
+        <li><a href="#timeline" class="nav-link">Timeline</a></li>
+        <li><a href="#moments" class="nav-link">Memories</a></li>
+        <li><a href="#interactive-choice" class="nav-link">Surprise</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Background Music Toggle -->
+        <button id="btn-music-toggle" class="btn-icon music-btn" aria-label="Toggle Romantic Background Music"
+          title="Play Romantic Music 🎵">
+          <span class="music-icon" id="music-icon">🎵</span>
+          <div class="music-wave" id="music-wave" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="btn-hamburger" class="hamburger-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+
+  <!-- Audio Element (Loads assets/audio/romantic.mp3 if present, Web Audio fallback synthesizes soothing chimes) -->
+  <audio id="bg-audio" preload="none" loop>
+    <source src="assets/audio/romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ========================================================
+       MAIN CONTENT CONTAINER
+  ======================================================== -->
+  <main id="main-content">
+
+    <!-- ======================================================
+         2. MAIN HERO SECTION
+    ====================================================== -->
+    <section id="hero" class="section hero-section">
+      <div class="hero-blobs" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <span class="badge-sparkle">✨</span> Just for you, Shrishti
+        </div>
+
+        <h1 class="hero-title">
+          Hey <span class="highlight-name handwritten">Shrishtu...</span> <span class="floating-heart-emoji">❤️</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          You make my world a little more beautiful every single day.
+        </p>
+
+        <!-- Central Glowing Heart Glass Card -->
+        <div class="hero-card glass-panel" id="hero-interactive-card">
+          <div class="hero-card-ornament top-left">🌸</div>
+          <div class="hero-card-ornament top-right">✨</div>
+          <div class="hero-card-heart-pulse" id="hero-main-heart" title="Double-click me for fireworks!">
+            <div class="heart-shape"></div>
+          </div>
+          <p class="hero-card-quote">
+            “In a world full of temporary things, you are a perpetual feeling of warmth and happiness.”
+          </p>
+          <div class="hero-card-footer">
+            <span class="small-tag">Forever Adored 💖</span>
+          </div>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="hero-buttons">
+          <a href="#why-special" class="btn-romantic btn-glass" id="btn-why-special">
+            <span>Why You're Special ✨</span>
+          </a>
+          <a href="#final-surprise" class="btn-romantic btn-primary">
+            <span>A Little Surprise 🎁</span>
+          </a>
+        </div>
+
+        <!-- Subtle Scroll Down Indicator -->
+        <div class="scroll-indicator">
+          <span class="scroll-text">Scroll with love</span>
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         3. DIGITAL LOVE LETTER
+    ====================================================== -->
+    <section id="love-letter" class="section letter-section">
+      <div class="container letter-container">
+        <div class="section-header text-center">
+          <span class="section-tag">💌 Sealed With Affection</span>
+          <h2 class="section-title">You Have A Letter 💌</h2>
+          <p class="section-description">
+            Written from the deepest corner of my heart. Tap the envelope to unlock what's inside.
+          </p>
+        </div>
+
+        <!-- 3D Realistic Interactive Envelope -->
+        <div class="envelope-wrapper" id="envelope-wrapper">
+          <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Click to open or fold love letter">
+            <!-- Envelope Flaps -->
+            <div class="envelope-back"></div>
+            <div class="envelope-paper-preview"></div>
+            <div class="envelope-left"></div>
+            <div class="envelope-right"></div>
+            <div class="envelope-bottom"></div>
+            <div class="envelope-flap" id="envelope-flap">
+              <div class="wax-seal" id="wax-seal">
+                <span>❤️</span>
+              </div>
+            </div>
+
+            <!-- Floating Hint -->
+            <div class="envelope-prompt" id="envelope-prompt">
+              <span>👉 Click the envelope to open! 👈</span>
+            </div>
+          </div>
+
+          <!-- The Extracted Letter (Slides out and reveals) -->
+          <article class="letter-sheet glass-panel" id="letter-sheet" aria-hidden="true">
+            <div class="letter-stamp">
+              <span>Special Delivery 🌸</span>
+            </div>
+
+            <div class="letter-header">
+              <h3 class="letter-salutation handwritten">Dear Shrishti,</h3>
+              <span class="letter-date">Written with tenderness ✨</span>
+            </div>
+
+            <div class="letter-body" id="letter-body">
+              <p class="letter-para p1">
+                Some people enter our lives and somehow make everything feel a little brighter.
+              </p>
+              <p class="letter-para p2">
+                You are one of those beautiful reasons behind my smiles.
+              </p>
+              <p class="letter-para p3">
+                I don't need a perfect world...<br>
+                I just need beautiful moments with you.
+              </p>
+              <p class="letter-para p4">
+                Thank you for being you. ❤️
+              </p>
+            </div>
+
+            <div class="letter-signature">
+              <p class="sign-text">With all my heart,</p>
+              <p class="sign-author handwritten">Someone who cares about you deeply ❤️</p>
+            </div>
+
+            <div class="letter-actions">
+              <button type="button" class="btn-letter-toggle" id="btn-refold-letter">
+                <span>Fold Envelope ✉️</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         4. "WHY YOU ARE SPECIAL" SECTION
+    ====================================================== -->
+    <section id="why-special" class="section why-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">🌹 Endless Reasons</span>
+          <h2 class="section-title">Why You're So Special ❤️</h2>
+          <p class="section-description">
+            There are a million reasons, but here are just a few little pieces of your wonder.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <div class="tilt-card glass-panel" data-card="1">
+            <div class="card-icon-wrapper">
+              <span class="floating-badge-icon">🌸</span>
+            </div>
+            <h3 class="card-title">Your Smile</h3>
+            <p class="card-quote">“Your smile can turn an ordinary moment into a beautiful one.”</p>
+            <div class="card-glow"></div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="tilt-card glass-panel" data-card="2">
+            <div class="card-icon-wrapper">
+              <span class="floating-badge-icon">✨</span>
+            </div>
+            <h3 class="card-title">Your Vibe</h3>
+            <p class="card-quote">“Being around you makes everything feel lighter.”</p>
+            <div class="card-glow"></div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="tilt-card glass-panel" data-card="3">
+            <div class="card-icon-wrapper">
+              <span class="floating-badge-icon">💖</span>
+            </div>
+            <h3 class="card-title">Your Heart</h3>
+            <p class="card-quote">“Your kindness makes you genuinely special.”</p>
+            <div class="card-glow"></div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="tilt-card glass-panel" data-card="4">
+            <div class="card-icon-wrapper">
+              <span class="floating-badge-icon">🌙</span>
+            </div>
+            <h3 class="card-title">Your Presence</h3>
+            <p class="card-quote">“Some people don't need to say anything to make a moment memorable.”</p>
+            <div class="card-glow"></div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="tilt-card glass-panel" data-card="5">
+            <div class="card-icon-wrapper">
+              <span class="floating-badge-icon">🦋</span>
+            </div>
+            <h3 class="card-title">Your Uniqueness</h3>
+            <p class="card-quote">“There is nobody quite like you.”</p>
+            <div class="card-glow"></div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="tilt-card glass-panel" data-card="6">
+            <div class="card-icon-wrapper">
+              <span class="floating-badge-icon">❤️</span>
+            </div>
+            <h3 class="card-title">Simply You</h3>
+            <p class="card-quote">“Because being yourself is already more than enough.”</p>
+            <div class="card-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         5. ROMANTIC LOVE BANNER
+    ====================================================== -->
+    <section class="romantic-banner-section" aria-label="Love Banner">
+      <div class="banner-sparkle-layer" aria-hidden="true"></div>
+      <div class="banner-content">
+        <div class="banner-flower-left">🌸</div>
+        <blockquote class="banner-quote">
+          <p class="banner-line-1">“If happiness had a name...</p>
+          <p class="banner-line-2">I'd probably call it <span class="banner-highlight handwritten">Shrishtu.</span> ❤️”
+          </p>
+        </blockquote>
+        <div class="banner-flower-right">🌺</div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         5.5 TIMELINE OF LOVE (2023 - 2026 & FOREVER)
+    ====================================================== -->
+    <section id="timeline" class="section timeline-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">⏳ Our Beautiful Journey</span>
+          <h2 class="section-title">Timeline of Love ❤️</h2>
+          <p class="section-description">
+            From the first sweet spark in 2023 to 2026 and forever beyond... Every moment with you is a treasure.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-track" aria-hidden="true"></div>
+
+          <!-- 2023 -->
+          <div class="timeline-item left" data-year="2023">
+            <div class="timeline-node">
+              <span class="timeline-year-badge">2023</span>
+              <span class="timeline-icon">🌱</span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-card-header">
+                <span class="timeline-chapter-tag">Chapter 1 • The Spark</span>
+                <span class="timeline-date">2023</span>
+              </div>
+              <h3 class="timeline-card-title">When Our Paths Crossed ✨</h3>
+              <p class="timeline-card-text">
+                The universe quietly conspired to bring someone extraordinary into my life. An ordinary year transformed
+                the very second I met you, Shrishti. Your warm smile instantly stood out, leaving a spark that would
+                forever brighten my world.
+              </p>
+              <div class="timeline-card-quote">
+                “The moment a stranger became the prettiest thought in my heart.”
+              </div>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="timeline-item right" data-year="2024">
+            <div class="timeline-node">
+              <span class="timeline-year-badge">2024</span>
+              <span class="timeline-icon">🌸</span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-card-header">
+                <span class="timeline-chapter-tag">Chapter 2 • Growing Closer</span>
+                <span class="timeline-date">2024</span>
+              </div>
+              <h3 class="timeline-card-title">Smiles, Inside Jokes &amp; Warmth 💬</h3>
+              <p class="timeline-card-text">
+                From casual hellos to endless conversations that made hours slip by like seconds. Learning your little
+                quirks, sharing laughter, and discovering how effortless and peaceful everything feels whenever you are
+                around.
+              </p>
+              <div class="timeline-card-quote">
+                “Talking to you quietly turned into my favorite part of every day.”
+              </div>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="timeline-item left" data-year="2025">
+            <div class="timeline-node">
+              <span class="timeline-year-badge">2025</span>
+              <span class="timeline-icon">💖</span>
+            </div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-card-header">
+                <span class="timeline-chapter-tag">Chapter 3 • Deep Bond</span>
+                <span class="timeline-date">2025</span>
+              </div>
+              <h3 class="timeline-card-title">A Safe Haven in Each Other 🏡</h3>
+              <p class="timeline-card-text">
+                Through every high, quiet afternoon, and busy day, your presence remained a steady source of gentle
+                comfort. Seeing your kindness, your pure soul, and realizing that Shrishti isn't just someone special —
+                you are irreplaceable.
+              </p>
+              <div class="timeline-card-quote">
+                “No matter how chaotic the world gets, you always feel like home.”
+              </div>
+            </div>
+          </div>
+
+          <!-- 2026 -->
+          <div class="timeline-item right" data-year="2026">
+            <div class="timeline-node">
+              <span class="timeline-year-badge">2026</span>
+              <span class="timeline-icon">🌟</span>
+            </div>
+            <div class="timeline-card glass-panel highlight-present">
+              <div class="timeline-card-header">
+                <span class="timeline-chapter-tag highlight-badge">Chapter 4 • The Golden Present</span>
+                <span class="timeline-date">2026 • Present</span>
+              </div>
+              <h3 class="timeline-card-title">Celebrating Every Beat With You 🎉</h3>
+              <p class="timeline-card-text">
+                Standing right here in 2026, creating this magical digital realm solely to make you smile. Celebrating
+                your radiance, your strength, and every single memory we share. My affection for you is deeper and purer
+                than ever.
+              </p>
+              <div class="timeline-card-quote">
+                “Still falling for your smile, more and more with every sunrise.”
+              </div>
+            </div>
+          </div>
+
+          <!-- FOREVER & ALWAYS -->
+          <div class="timeline-item center forever-item" data-year="Forever">
+            <div class="timeline-node forever-node">
+              <span class="timeline-year-badge forever-badge">♾️</span>
+              <span class="timeline-icon">❤️</span>
+            </div>
+            <div class="timeline-card glass-panel forever-card">
+              <div class="timeline-card-header">
+                <span class="timeline-chapter-tag forever-tag">Final Chapter • Endless Horizon</span>
+                <span class="timeline-date">Forever &amp; Always</span>
+              </div>
+              <h3 class="timeline-card-title handwritten forever-title">Into Eternity With You ♾️❤️</h3>
+              <p class="timeline-card-text">
+                Years may turn into decades and seasons will continue to dance, but my promise remains timeless: to
+                cherish, respect, support, and adore you, Shrishti. An infinite journey that knows no end.
+              </p>
+              <div class="timeline-card-quote forever-quote handwritten">
+                “Some loves are written for a season... but you, Shrishtu, are written for eternity.”
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         6. OUR BEAUTIFUL MOMENTS (GALLERY)
+    ====================================================== -->
+    <section id="moments" class="section gallery-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">📸 Cherished Keepsakes</span>
+          <h2 class="section-title">Beautiful Memories With Shrishti ✨</h2>
+          <p class="section-description">
+            Every smile, laugh, and warm glance we share. A blooming treasure chest of our love story — explore them or
+            add your own memories below!
+          </p>
+        </div>
+        <!-- Large Collection Grid -->
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Memory 1 -->
+          <div class="gallery-card glass-panel" data-memory-index="0" data-category="smiles"
+            data-title="That Beautiful Smile ❤️" data-date="2023"
+            data-desc="The brightest light in any room is your genuine, warm smile. It instantly makes any gloomy day bright.">
+
+            <div class="gallery-img-container">
+              <img src="assets/images/photo1.jpg" alt="That Beautiful Smile" loading="lazy" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="zoom-icon">💖 View Memory</span>
+              </div>
+              <span class="gallery-badge">🌸 Smile • 1 Photo</span>
+            </div>
+            <div class="gallery-caption">
+              <div class="gallery-meta">
+                <span class="gallery-date">Year 2023</span>
+                <button type="button" class="gallery-like-btn" title="Like this memory">❤️ <span
+                    class="like-num">56</span></button>
+              </div>
+              <h4>That Beautiful Smile ❤️</h4>
+              <p>Sunshine in every laugh</p>
+            </div>
+          </div>
+
+          <!-- Memory 2 -->
+          <div class="gallery-card glass-panel" data-memory-index="1" data-category="nights"
+            data-title="Little Moments, Big Memories ✨" data-date="2023"
+            data-desc="The quiet, comfortable moments under the starry night that mean the absolute world. Simple, pure, and forever cherished.">
+
+            <div class="gallery-img-container">
+              <img src="assets/images/photo2.jpg" alt="Little Moments, Big Memories" loading="lazy" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="zoom-icon">💖 View Memory</span>
+              </div>
+              <span class="gallery-badge">🌙 Night • 2 Photos 📸</span>
+            </div>
+            <div class="gallery-caption">
+              <div class="gallery-meta">
+                <span class="gallery-date">Year 2023</span>
+                <button type="button" class="gallery-like-btn" title="Like this memory">❤️ <span
+                    class="like-num">34</span></button>
+              </div>
+              <h4>Little Moments, Big Memories ✨</h4>
+              <p>Every small second counts</p>
+            </div>
+          </div>
+
+          <!-- Memory 3 -->
+          <div class="gallery-card glass-panel" data-memory-index="2" data-category="cozy"
+            data-title="Just You Being You 🌸" data-date="2024"
+            data-desc="Your natural grace, warmth, and authentic self are pure poetry. Never change who you are, Shrishti.">
+
+            <div class="gallery-img-container">
+              <img src="assets/images/photo5.jpg" alt="Just You Being You" loading="lazy" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="zoom-icon">💖 View Memory</span>
+              </div>
+              <span class="gallery-badge">🌸 Blossom • 1 Photo</span>
+            </div>
+            <div class="gallery-caption">
+              <div class="gallery-meta">
+                <span class="gallery-date">Year 2024</span>
+                <button type="button" class="gallery-like-btn" title="Like this memory">❤️ <span
+                    class="like-num">42</span></button>
+              </div>
+              <h4>Just You Being You 🌸</h4>
+              <p>Graceful, sweet and genuine</p>
+            </div>
+          </div>
+
+          <!-- Memory 4 -->
+          <div class="gallery-card glass-panel" data-memory-index="3" data-category="nights"
+            data-title="A Moment Worth Remembering 💕" data-date="2024"
+            data-desc="Golden hour tranquility, sky lanterns floating into twilight, and dreams held close to heart.">
+
+            <div class="gallery-img-container">
+              <img src="assets/images/photo4.jpg" alt="A Moment Worth Remembering" loading="lazy" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="zoom-icon">💖 View Memory</span>
+              </div>
+              <span class="gallery-badge">💕 Twilight • 2 Photos 📸</span>
+            </div>
+            <div class="gallery-caption">
+              <div class="gallery-meta">
+                <span class="gallery-date">Year 2024</span>
+                <button type="button" class="gallery-like-btn" title="Like this memory">❤️ <span
+                    class="like-num">39</span></button>
+              </div>
+              <h4>A Moment Worth Remembering 💕</h4>
+              <p>Held forever close to heart</p>
+            </div>
+          </div>
+
+          <!-- Memory 5 -->
+          <div class="gallery-card glass-panel" data-memory-index="4" data-category="cozy"
+            data-title="Cozy Coffee &amp; Whispers ☕" data-date="2024"
+            data-desc="Warm cups in our hands, latte art hearts, and conversations where hours felt like seconds. The coziest feeling ever.">
+
+            <div class="gallery-img-container">
+              <img src="assets/images/photo3.jpg" alt="Cozy Coffee and Whispers" loading="lazy" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="zoom-icon">💖 View Memory</span>
+              </div>
+              <span class="gallery-badge">☕ Cozy • 1 Photo</span>
+            </div>
+            <div class="gallery-caption">
+              <div class="gallery-meta">
+                <span class="gallery-date">Year 2024</span>
+                <button type="button" class="gallery-like-btn" title="Like this memory">❤️ <span
+                    class="like-num">45</span></button>
+              </div>
+              <h4>Cozy Coffee &amp; Whispers ☕</h4>
+              <p>Warmth in every sip &amp; laugh</p>
+            </div>
+          </div>
+
+          <!-- Memory 6 -->
+          <div class="gallery-card glass-panel" data-memory-index="5" data-category="adventures"
+            data-title="Holding Hands Forever 🤝" data-date="2025"
+            data-desc="Two hands intertwined against the twilight sky. An unspoken promise to walk side by side through every path of life.">
+
+            <div class="gallery-img-container">
+              <img src="assets/images/photo9.jpg" alt="Holding Hands Forever" loading="lazy" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="zoom-icon">💖 View Memory</span>
+              </div>
+              <span class="gallery-badge">🤝 Together • 3 Photos 📸</span>
+            </div>
+            <div class="gallery-caption">
+              <div class="gallery-meta">
+                <span class="gallery-date">Year 2025</span>
+                <button type="button" class="gallery-like-btn" title="Like this memory">❤️ <span
+                    class="like-num">51</span></button>
+              </div>
+              <h4>Holding Hands Forever 🤝</h4>
+              <p>Never letting go of your hand</p>
+            </div>
+          </div>
+
+          <!-- Memory 7 -->
+          <div class="gallery-card glass-panel" data-memory-index="6" data-category="nights"
+            data-title="Fairy Lights &amp; Stolen Glances 🏮" data-date="2025"
+            data-desc="Glowing amber bulbs strung along the balcony terrace, cool evening air, and catching your eyes sparkle with joy.">
+
+            <div class="gallery-img-container">
+              <img src="assets/images/photo6.jpg" alt="Fairy Lights and Stolen Glances" loading="lazy"
+                class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="zoom-icon">💖 View Memory</span>
+              </div>
+              <span class="gallery-badge">🏮 Magic • 2 Photos 📸</span>
+            </div>
+            <div class="gallery-caption">
+              <div class="gallery-meta">
+                <span class="gallery-date">Year 2025</span>
+                <button type="button" class="gallery-like-btn" title="Like this memory">❤️ <span
+                    class="like-num">36</span></button>
+              </div>
+              <h4>Fairy Lights &amp; Stolen Glances 🏮</h4>
+              <p>Magic in the quiet evening air</p>
+            </div>
+          </div>
+
+          <!-- Memory 8 -->
+          <div class="gallery-card glass-panel" data-memory-index="7" data-category="adventures"
+            data-title="Seaside Serenade &amp; Sunset Waves 🌊" data-date="2025"
+            data-desc="The gentle lull of ocean waves, golden sunset reflecting across the shore, and carving our little heart symbol into the sand.">
+
+            <div class="gallery-img-container">
+              <img src="assets/images/photo7.jpg" alt="Seaside Serenade and Sunset Waves" loading="lazy"
+                class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="zoom-icon">💖 View Memory</span>
+              </div>
+              <span class="gallery-badge">🌊 Ocean • 3 Photos 📸</span>
+            </div>
+            <div class="gallery-caption">
+              <div class="gallery-meta">
+                <span class="gallery-date">Year 2025</span>
+                <button type="button" class="gallery-like-btn" title="Like this memory">❤️ <span
+                    class="like-num">48</span></button>
+              </div>
+              <h4>Seaside Serenade &amp; Sunset Waves 🌊</h4>
+              <p>Golden tides and timeless peace</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Memory Action Prompt inside gallery section -->
+        <div class="gallery-footer-action text-center" style="margin-top: 2.5rem;">
+          <button type="button" class="btn-romantic btn-glass" id="btn-add-memory">
+            <span>✨ Add Your Own Memory 📸</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         7. CUTE INTERACTIVE SECTION ("Choose One ❤️")
+    ====================================================== -->
+    <section id="interactive-choice" class="section choice-section">
+      <div class="container text-center">
+        <div class="section-header">
+          <span class="section-tag">🎁 A Playful Secret</span>
+          <h2 class="section-title">Choose One ❤️</h2>
+          <p class="section-description">
+            I prepared three cute little surprises just for you. Which one calls to you today?
+          </p>
+        </div>
+
+        <div class="choice-boxes-grid">
+          <!-- Choice 1 -->
+          <button type="button" class="choice-box glass-panel" data-choice="message" id="choice-btn-1">
+            <div class="choice-box-inner">
+              <span class="choice-emoji">💌</span>
+              <h3 class="choice-title">A Message</h3>
+              <p class="choice-hint">Words whispered for you</p>
+              <div class="choice-tap-badge">Tap me! 💖</div>
+            </div>
+          </button>
+
+          <!-- Choice 2 -->
+          <button type="button" class="choice-box glass-panel" data-choice="surprise" id="choice-btn-2">
+            <div class="choice-box-inner">
+              <span class="choice-emoji">🎁</span>
+              <h3 class="choice-title">A Surprise</h3>
+              <p class="choice-hint">Unwrap something cozy</p>
+              <div class="choice-tap-badge">Tap me! 💖</div>
+            </div>
+          </button>
+
+          <!-- Choice 3 -->
+          <button type="button" class="choice-box glass-panel" data-choice="sweet" id="choice-btn-3">
+            <div class="choice-box-inner">
+              <span class="choice-emoji">🌹</span>
+              <h3 class="choice-title">Something Sweet</h3>
+              <p class="choice-hint">A dose of pure charm</p>
+              <div class="choice-tap-badge">Tap me! 💖</div>
+            </div>
+          </button>
+        </div>
+
+        <!-- Revealed Choice Modal Display -->
+        <div class="choice-reveal-card glass-panel" id="choice-reveal-area" style="display: none;">
+          <div class="reveal-content-wrapper">
+            <span class="reveal-icon" id="reveal-icon">💖</span>
+            <h3 class="reveal-title" id="reveal-title">For Shrishti</h3>
+            <p class="reveal-text" id="reveal-text"></p>
+            <button type="button" class="btn-romantic btn-glass btn-sm" id="btn-close-reveal">
+              <span>Choose Another One 🌸</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         8. LOVE METER SECTION
+    ====================================================== -->
+    <section id="love-meter" class="section meter-section">
+      <div class="container text-center">
+        <div class="section-header">
+          <span class="section-tag">💖 Scientific Measurement</span>
+          <h2 class="section-title">How Much Do You Mean To Me?</h2>
+          <p class="section-description">
+            I tried putting it on a scale, but the universe might complain...
+          </p>
+        </div>
+
+        <div class="meter-card glass-panel" id="meter-container">
+          <!-- Animated Gauge Indicator -->
+          <div class="meter-gauge-container">
+            <svg class="meter-svg" viewBox="0 0 200 120">
+              <path class="meter-bg-arc" d="M 20 100 A 80 80 0 0 1 180 100" />
+              <path class="meter-fill-arc" id="meter-arc" d="M 20 100 A 80 80 0 0 1 180 100" />
+            </svg>
+            <div class="meter-center-display">
+              <span class="meter-value" id="meter-display-val">0%</span>
+              <span class="meter-status" id="meter-status-lbl">Waiting to calculate...</span>
+            </div>
+          </div>
+
+          <!-- Pulsing Heart icon in meter -->
+          <div class="meter-heart-badge" id="meter-heart-icon">
+            <span>❤️</span>
+          </div>
+
+          <div class="meter-actions">
+            <button type="button" class="btn-romantic btn-primary" id="btn-calculate-love">
+              <span class="btn-text">Calculate ❤️</span>
+            </button>
+          </div>
+
+          <!-- Dramatic Message Breakdown -->
+          <div class="meter-result-message" id="meter-overflow-msg" style="display: none;">
+            <p class="overflow-text">Oops... The scale wasn't big enough. ❤️</p>
+            <p class="overflow-sub">My love and admiration for you has literally exceeded infinite bounds!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         9. NIGHT SKY LOVE SECTION
+    ====================================================== -->
+    <section id="night-sky" class="section night-sky-section">
+      <canvas id="stars-canvas" class="stars-canvas" aria-hidden="true"></canvas>
+
+      <div class="night-sky-content container text-center">
+        <div class="glowing-moon" id="interactive-moon" title="Tap the moon to make a wish!">
+          <div class="moon-crater c1"></div>
+          <div class="moon-crater c2"></div>
+        </div>
+
+        <div class="sky-text-wrapper glass-panel">
+          <span class="sky-tag">✨ Celestial Truth</span>
+          <blockquote class="sky-quote handwritten">
+            “Even the stars would be jealous of your sparkle. ✨”
+          </blockquote>
+          <p class="sky-caption">
+            Tap anywhere in the sky to summon shooting stars for you, Shrishti.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         10. FINAL SURPRISE SECTION
+    ====================================================== -->
+    <section id="final-surprise" class="section finale-section">
+      <div class="container text-center finale-container">
+        <div class="section-header">
+          <span class="section-tag">💝 The Grand Finale</span>
+          <h2 class="section-title">One Last Thing, Shrishtu... ❤️</h2>
+          <p class="section-description">
+            Before you go, there is one everlasting truth I want to leave right here with you.
+          </p>
+        </div>
+
+        <div class="finale-card-trigger">
+          <button type="button" class="btn-romantic btn-finale" id="btn-open-finale">
+            <span class="finale-btn-heart">💗</span>
+            <span class="finale-btn-text">Open My Heart 💗</span>
+            <span class="finale-ring"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       11. FOOTER
+  ======================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container text-center">
+      <div class="footer-heart-symbol"></div>
+      <p class="footer-message handwritten">Made with infinite ❤️ for Shrishtu </p>
+      <p class="footer-copyright">© 2026 — A Little Corner of Love • All my warm wishes always </p>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MODALS & OVERLAYS
+  ======================================================== -->
+
+  <!-- Fullscreen Grand Finale Celebration Overlay -->
+  <div id="finale-modal" class="modal-overlay finale-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <canvas id="fireworks-canvas" class="fireworks-canvas" aria-hidden="true"></canvas>
+
+    <div class="finale-modal-dialog glass-panel">
+      <button type="button" class="modal-close-btn" id="btn-close-finale" aria-label="Close modal">×</button>
+
+      <div class="finale-grand-heart beating-heart">
+        <svg viewBox="0 0 100 90" fill="currentColor">
+          <path
+            d="M50 88.6C47.8 88.6 10 65 2.2 46.2C-5.6 27.4 3.8 6.4 22.8 1.4C34.4 -1.6 45.4 4.8 50 13.8C54.6 4.8 65.6 -1.6 77.2 1.4C96.2 6.4 105.6 27.4 97.8 46.2C90 65 52.2 88.6 50 88.6Z" />
+        </svg>
+      </div>
+
+      <h2 class="finale-modal-name handwritten">Shrishti Yadav ❤️</h2>
+
+      <div class="finale-modal-lines">
+        <p class="f-line-1">You are truly special.</p>
+        <p class="f-line-2">Never forget that.</p>
+        <p class="f-line-3">Keep smiling, because your smile is beautiful. 🌸</p>
+      </div>
+
+      <div class="finale-modal-footer">
+        <button type="button" class="btn-romantic btn-primary" id="btn-replay-celebration">
+          <span>Celebrate Again 🎆💖</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       FULL SCREEN LOVE EXPLOSION FOR "WHY YOU'RE SPECIAL"
+  ====================================================== -->
+  <div id="full-screen-love-explosion" class="full-screen-love-overlay" aria-hidden="true">
+    <div class="love-screen-flash"></div>
+    <div class="love-screen-shockwave shockwave-a"></div>
+    <div class="love-screen-shockwave shockwave-b"></div>
+    <div class="love-screen-shockwave shockwave-c"></div>
+    <div id="screen-love-particles" class="screen-love-particles-container"></div>
+
+    <!-- Romantic Center Love Announcement -->
+    <div class="screen-love-banner glass-panel">
+      <div class="screen-love-heart-pulse">💖</div>
+      <span class="screen-love-tag">✨ A Truth Written In The Stars ✨</span>
+      <h2 class="screen-love-title handwritten">Shrishti, You Are So Incredibly Special ❤️</h2>
+      <p class="screen-love-sub">Every little beat of my heart belongs to you... 🌸</p>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       ROMANTIC LOVE BLAST SPLASH SCREEN
+  ====================================================== -->
+  <div id="love-blast-splash" class="love-blast-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="love-blast-backdrop"></div>
+    <!-- Expanding Love Shockwaves -->
+    <div class="love-shockwave wave-1"></div>
+    <div class="love-shockwave wave-2"></div>
+    <div class="love-shockwave wave-3"></div>
+    <!-- Dynamic Particle Burst Container -->
+    <div id="love-blast-particles" class="love-blast-particles-container" aria-hidden="true"></div>
+    <!-- Center Romantic Splash Card & Glowing Beating Heart -->
+    <div class="love-blast-card">
+      <div class="love-blast-heart-core">
+        <span class="love-core-emoji">💖</span>
+        <div class="love-core-aura"></div>
+      </div>
+      <span class="love-blast-tag" id="love-blast-tag">✨ Unlocking Precious Memory ✨</span>
+      <h3 class="love-blast-title handwritten" id="love-blast-title">That Beautiful Smile ❤️</h3>
+      <p class="love-blast-sub" id="love-blast-sub">Opening a piece of my heart with Shrishti...</p>
+      <div class="love-blast-loader">
+        <span class="love-dot">🌸</span>
+        <span class="love-dot">💕</span>
+        <span class="love-dot">✨</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enhanced Memory Lightbox Modal with Album Navigation -->
+  <div id="lightbox-modal" class="modal-overlay lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-dialog glass-panel">
+      <button type="button" class="modal-close-btn" id="btn-close-lightbox" aria-label="Close lightbox">×</button>
+
+      <!-- Prev & Next Navigation Buttons -->
+      <button type="button" class="lightbox-nav-btn prev-btn" id="btn-prev-lightbox" aria-label="Previous memory"
+        title="Previous memory">
+        <span>❮</span>
+      </button>
+      <button type="button" class="lightbox-nav-btn next-btn" id="btn-next-lightbox" aria-label="Next memory"
+        title="Next memory">
+        <span>❯</span>
+      </button>
+
+      <div class="lightbox-img-wrapper">
+        <!-- Floating Photo Counter Badge -->
+        <div class="photo-counter-badge" id="photo-counter-badge">Photo 1 of 1</div>
+        <img src="" alt="" id="lightbox-img" class="lightbox-img">
+
+        <!-- Multi-photo Navigation overlay arrows -->
+        <button type="button" class="photo-slide-btn photo-prev-btn" id="btn-photo-prev" aria-label="Previous photo"
+          title="Previous photo">❮</button>
+        <button type="button" class="photo-slide-btn photo-next-btn" id="btn-photo-next" aria-label="Next photo"
+          title="Next photo">❯</button>
+
+        <!-- Photo Dots / Pips for multi-photo albums -->
+        <div class="lightbox-photo-dots" id="lightbox-photo-dots"></div>
+      </div>
+
+      <div class="lightbox-caption">
+        <div class="lightbox-top-meta">
+          <span class="lightbox-badge" id="lightbox-badge">🌸 Sweet Memory</span>
+          <span class="lightbox-counter" id="lightbox-counter">Memory 1 of 8</span>
+          <span class="lightbox-date" id="lightbox-date">2026</span>
+        </div>
+        <h3 id="lightbox-title" class="lightbox-title"></h3>
+        <p id="lightbox-desc" class="lightbox-desc"></p>
+        <p id="lightbox-photo-note" class="lightbox-photo-note"></p>
+
+        <div class="lightbox-footer-action">
+          <button type="button" class="btn-romantic btn-love-blast-replay" id="btn-love-blast-replay"
+            title="Blast love hearts again!">
+            <span>💥 Love Blast Again!</span>
+          </button>
+          <button type="button" class="btn-romantic btn-glass btn-sm" id="btn-lightbox-like">
+            <span>❤️ Loved by Shrishti</span>
+          </button>
+        </div>
+
+        <!-- In-Modal Album Memory Navigator -->
+        <div class="lightbox-memory-nav">
+          <button type="button" class="btn-memory-step" id="btn-memory-step-prev">
+            <span>❮ Prev Memory</span>
+          </button>
+          <span class="memory-step-label" id="memory-step-label">Memory 1 of 8</span>
+          <button type="button" class="btn-memory-step" id="btn-memory-step-next">
+            <span>Next Memory ❯</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Memory Custom Modal -->
+  <div id="add-memory-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="add-memory-dialog glass-panel">
+      <button type="button" class="modal-close-btn" id="btn-close-add-memory" aria-label="Close form">×</button>
+      <h3 class="modal-heading">Add A Sweet Memory 🌸</h3>
+      <p class="modal-sub">Add your favorite photo of Shrishti or a special memory together!</p>
+
+      <form id="add-memory-form" class="memory-form">
+        <div class="form-group">
+          <label for="memory-title">Memory Title:</label>
+          <input type="text" id="memory-title" placeholder="e.g. Unforgettable Evening ✨" required maxlength="50">
+        </div>
+
+        <div class="form-group">
+          <label for="memory-desc">Short Note / Caption:</label>
+          <input type="text" id="memory-desc" placeholder="e.g. You looked so happy here ❤️" required maxlength="100">
+        </div>
+
+        <div class="form-group">
+          <label for="memory-img-url">Image URL (or select a file below):</label>
+          <input type="url" id="memory-img-url" placeholder="https://... (or leave empty if uploading file)">
+        </div>
+
+        <div class="form-group">
+          <label for="memory-file-input">Or Upload from Device:</label>
+          <input type="file" id="memory-file-input" accept="image/*">
+        </div>
+
+        <button type="submit" class="btn-romantic btn-primary btn-block">
+          <span>Save Memory to Gallery 💖</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Easter Egg Secret Note Modal -->
+  <div id="easter-egg-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="easter-egg-dialog glass-panel text-center">
+      <button type="button" class="modal-close-btn" id="btn-close-easter-egg" aria-label="Close secret">×</button>
+      <span class="easter-egg-icon">🗝️❤️</span>
+      <h3 class="handwritten easter-egg-title">Secret Easter Egg Unlocked!</h3>
+      <p class="easter-egg-quote">
+        “Psst Shrishtu ! You discovered the secret heart in the logo! <br>
+        Just a friendly reminder: you bring so much warmth and light into this world. Never stop shining! ✨”
+      </p>
+      <button type="button" class="btn-romantic btn-glass btn-sm" id="btn-ok-easter-egg">
+        <span>Aww, Thank You! 🥰</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating Heart Rain Action Button (Bottom Right) -->
+  <button id="btn-floating-heart" class="floating-action-heart" aria-label="Send a shower of hearts"
+    title="Click to send love hearts! ❤️">
+    <span class="fab-heart">💖</span>
+    <span class="fab-pulse"></span>
+  </button>
+
+  <!-- Sweet Toast Notifications Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- JavaScript Bundle -->
+  <script src="script.js"></script>
+</body>
+
+</html>
